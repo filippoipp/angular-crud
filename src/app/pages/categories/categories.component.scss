@@ -1,0 +1,23 @@
+.content {
+  width: 50%;
+}
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-column-id {
+  flex: 0 0 70%;
+}
+
+.mat-column-name {
+  flex: 0 0 20%;
+}
+
+.mat-column-action {
+  flex: 0 0 10%;
+}

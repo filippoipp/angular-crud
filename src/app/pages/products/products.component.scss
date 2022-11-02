@@ -1,0 +1,31 @@
+.content {
+  width: 50%;
+}
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-column-id {
+  flex: 0 0 50%;
+}
+
+.mat-column-name {
+  flex: 0 0 15%;
+}
+
+.mat-column-price {
+  flex: 0 0 15%;
+}
+
+.mat-column-category {
+  flex: 0 0 15%;
+}
+
+.mat-column-action {
+  flex: 0 0 5%;
+}
