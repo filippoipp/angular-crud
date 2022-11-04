@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
 
   actionBtn: string ="Save";
 
-  constructor(private formBuilder : FormBuilder, private api:ApiService, private dialogRef: MatDialogRef<DialogComponent>,@Inject(MAT_DIALOG_DATA) public editData:any) { }
+  constructor(private formBuilder : FormBuilder, private api: ApiService, private dialogRef: MatDialogRef<DialogComponent>,@Inject(MAT_DIALOG_DATA) public editData:any) { }
 
   ngOnInit(): void {
     this.categoryForm = this.formBuilder.group({

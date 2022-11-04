@@ -1,2 +1,2 @@
-type UriType = 'category' | 'product';
+type UriType = 'category' | 'product' | 'auth';
 export default UriType;

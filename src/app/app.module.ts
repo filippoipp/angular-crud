@@ -10,6 +10,18 @@ import { MaterialModule } from './material/material.module';
 import { SpinnerOverlayComponent } from './components/spinner-overlay/spinner-overlay.component';
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 
+import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
+import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
+
+export function MSALInstanceFactory(): IPublicClientApplication {
+  return new PublicClientApplication({
+    auth: {
+      clientId: 'fe16105c-2cd4-4447-b05f-440cb233041a',
+      redirectUri: 'http://localhost:4200'
+    }
+  });
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +33,7 @@ import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    MsalModule
   ],
   providers: [
     {
@@ -28,6 +41,11 @@ import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
       useClass: SpinnerInterceptor,
       multi: true,
     },
+    {
+      provide: MSAL_INSTANCE,
+      useFactory: MSALInstanceFactory
+    },
+    MsalService
   ],
   bootstrap: [AppComponent]
 })
